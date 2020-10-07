@@ -24,6 +24,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # coisas adicionais
+/backend
 # /src/config
 # /src/helpers/AuthHandler.js
 # /backend/config
