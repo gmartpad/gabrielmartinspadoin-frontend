@@ -176,7 +176,13 @@ const Perfil = () => {
                 .then(res => {
                     toast.success(`${res.data}`)
                 })  
-                .catch(err => toast.error(`Erro: ${err}`))
+                .catch(err => {
+                    if(err.response !== undefined){
+                        toast.error(`Erro: ${err.response.data.erro}`)
+                    }else{
+                        toast.error(`Houve um erro inesperado. Tente novamente mais tarde.`)
+                    }
+                })
 
                 setSenhaAtual('');
                 setNovaSenha('');

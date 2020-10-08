@@ -71,7 +71,11 @@ const Certificados = () => {
             setDisabled(false);
         })  
         .catch(err => {
-            toast.error(`Erro: ${err.response.data.erro}`)
+            if(err.response !== undefined){
+                toast.error(`Erro: ${err.response.data.erro}`)
+            }else{
+                toast.error(`Houve um erro inesperado. Tente novamente mais tarde.`)
+            }
             setDisabled(false);
         })
 
