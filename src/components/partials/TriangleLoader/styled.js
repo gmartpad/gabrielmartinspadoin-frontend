@@ -4,7 +4,8 @@ export const Div = styled.div`
 
     & {
         --path: #2F3545;
-        --dot: #eee;
+        /* --dot: #eee; */
+        --dot: dodgerblue;
         --duration: 3s;
         width: 44px;
         height: 44px;

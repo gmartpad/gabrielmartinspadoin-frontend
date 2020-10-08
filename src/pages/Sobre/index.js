@@ -108,7 +108,7 @@ const Sobre = () => {
                     <TituloSobre>Certificados</TituloSobre>
                     <Certificados>
                         {certificadosArray.map((i, k)=>
-                            <Certificado onClick={e=>setModal(i.src, true)} key={k} index={i.id} src={i.src} title={i.titulo} alt={i.descricao}/>
+                            <Certificado onClick={e=>setModal(i.src, true)} key={k} index={k} src={i.src} title={i.titulo} alt={i.descricao}/>
                         )}
                     </Certificados>
             

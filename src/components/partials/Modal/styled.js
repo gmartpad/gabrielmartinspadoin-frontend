@@ -10,7 +10,7 @@ export const ModalBackground = styled.div`
     left:0;
     transition: all .3s ease-in-out;
     display: ${props => props.open ? 'flex' : 'none'};
-    z-index:2000;
+    z-index:3000;
 
 `;
 
@@ -28,7 +28,7 @@ export const ModalWindow = styled.div`
     justify-content:center;
     align-items:center;
     padding:5vh 0vw;
-    z-index:2001;
+    z-index:3001;
 
     button {
         position:absolute;
@@ -50,6 +50,7 @@ export const ModalWindow = styled.div`
         font-weight: bold;
         font-size: 20px;
         transition: all .2s ease-in-out;
+        z-index: 3002;
 
         &:hover {
             background-color: #ddd;

@@ -12,6 +12,7 @@ export const Certificados = styled.div`
     max-width:1230px;
     /* padding: 0 calc((100vw - 1230px)/2); */
     transform: perspective(1500px);
+    direction: rtl;
 
     @media only screen and (max-width: 768px){
         max-width: max-content;
@@ -56,12 +57,19 @@ export const Certificado = styled.img`
     margin: 0 -12%;
     transform: rotateY(-30deg) rotateX(30deg);
     transition: all .3s ease-in-out;
-    z-index: ${props => 10 - props.index};
+    z-index: ${props => 9};
     /* border: 1px solid #000; */
     cursor:pointer;
+    border-radius: 4px;
+
+    /* &:not(:hover){
+        z-index: 2;
+    } */
+
     &:hover{
         transform: rotateY(0deg) rotateX(0deg);
         z-index: 10;
+
     }
 
     @media only screen and (max-width: 768px){
