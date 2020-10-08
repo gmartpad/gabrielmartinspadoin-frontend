@@ -57,8 +57,33 @@ const Header = () => {
 
     }
 
+    const checkCloseMenu = () => {
+        document.querySelector('#root').addEventListener('click', 
+            e=>{
+                let a = [];
+                e.path.forEach(e=>{
+                    if(e.classList !== undefined){
+                        if(e.classList.contains('burger-button')){
+                            a.push('burger-button')
+                        }else if(e.classList.contains('mobile')){
+                            a.push('mobile')
+                        }else if(e.classList.contains('m-link')){
+                            a.push('m-link')
+                        }
+                    }
+                })
+                if(!a.includes('mobile') && !a.includes('burger-button') || a.includes('m-link')){
+                    if(burgerActive){
+                        setBurgerActive(!burgerActive);
+                    }
+                };
+            }
+        )
+    }
+
     useEffect(()=>{
         getPFP_SRC();
+        checkCloseMenu();
     })
 
     //-----------------------------
@@ -127,47 +152,47 @@ const Header = () => {
                     {
                         isLogged() ?
                             <>
-                                <li>
+                                <li className="m-link">
                                     <Link to="/">Home</Link>
                                 </li>
-                                <li>
+                                <li className="m-link">
                                     <Link to="/sobre">Sobre</Link>
                                 </li>
-                                <li className="noUpper">
+                                <li className="noUpper m-link">
                                     <Link to="/apis">APIs</Link>
                                 </li>
                                 {isAdmin() &&
                                     <>
-                                        <li>
+                                        <li className="m-link">
                                             <Link to="/certificados/criar">Certificados</Link>
                                         </li>
-                                        <li>
+                                        <li className="m-link">
                                             <Link to="/posts/criar">Criar Post</Link>
                                         </li>
                                     </>
                                 }
-                                <li>
+                                <li className="m-link">
                                     <Link to="/perfil">Perfil</Link>
                                 </li>
-                                <li>
+                                <li className="m-link">
                                     <button onClick={logout}>Sair</button>
                                 </li>
                             </>
                                     :
                             <>
-                                <li>
+                                <li className="m-link">
                                     <Link to="/">Home</Link>
                                 </li>
-                                <li>
+                                <li className="m-link">
                                     <Link to="/sobre">Sobre</Link>
                                 </li>
-                                <li className="noUpper">
+                                <li className="noUpper m-link">
                                     <Link to="/apis">APIs</Link>
                                 </li>
-                                <li>
+                                <li className="m-link">
                                     <Link to="/cadastre-se">Cadastre-se</Link>
                                 </li>
-                                <li>
+                                <li className="m-link">
                                     <Link to="/login">Login</Link>
                                 </li>
                             </>
