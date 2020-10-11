@@ -25,6 +25,19 @@ export const Form = styled.form`
 
     }
 
+    .photoSpan{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .photoSpan.active input[type=file]::before{
+        background-image: url('../../../assets/input_mask/camera_icon_tiny.png') !important;
+        background-color: rgba(0,0,0,0.4) !important;
+    }
+
     &.login{
         max-width: 500px;
     }
@@ -79,11 +92,20 @@ export const Input = styled.input`
 
     &#nome_do_arquivo_pfp[type=file], &#thumbnail[type=file]{
         border:none;
+        border-radius: 50%;
         display: block;
-        height: 28px;
-        padding: 14px 5px 5px 0;
+        /* height: 28px; */
+        height: 302px;
+        width: 306px;
+        margin-top: 14px;
+        /* padding: 14px 5px 5px 0; */
+        padding: 0px !important;
         font-size: 0px;
-        width: 235px;
+        /* width: 235px; */
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .post &#nome_do_arquivo_pfp[type=file], .post &#thumbnail[type=file]{
@@ -100,37 +122,50 @@ export const Input = styled.input`
     }
 
     &[type=file]::before {
-        background:none;
-        border:2px solid #000;
-        background-color: #000;
+        /* background-image: url('../../../assets/input_mask/camera_icon_tiny.png'); */
+        background-image: none;
+        background-color: rgba(0,0,0,0);
+        background-size: 40px 40px;
+        background-repeat: no-repeat;
+        background-position: center;
+        border:2px solid rgba(0,0,0,0);
+        border-radius: 50%;
         color: #fff;
-        padding:10px;
+        padding:0px;
         border-radius:10px;
         cursor:pointer;
         font-size: 16px;
         transition:all .2s ease-in-out;
         outline:none;
-        width: 200px;
+        width: 100%;
+        height: 100%;
         margin: 0 auto;
         text-align: center;
         font-weight: normal;
         font-size: 16px !important;
-
-    }
-
-    &#nome_do_arquivo_pfp[type=file]::before, &#thumbnail[type=file]::before {
-        content: 'Escolha sua imagem de perfil';
-    }
-
-    .post &#nome_do_arquivo_pfp[type=file]::before, .post &#thumbnail[type=file]::before {
-        content: 'Escolha sua thumbnail';
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     &[type=file]:hover::before{
-        background-color:#fff;
+        background-image: url('../../../assets/input_mask/camera_icon_tiny.png');
+        background-color: rgba(0,0,0,0.4);
+    }
+
+    &#nome_do_arquivo_pfp[type=file]::before, &#thumbnail[type=file]::before {
+        content: '';
+    }
+
+    .post &#nome_do_arquivo_pfp[type=file]::before, .post &#thumbnail[type=file]::before {
+        content: '';
+    }
+
+    &[type=file]:hover::before{
+        /* background-color:#fff;
         color:#000;
         font-weight:bold;
-        border:2px solid #000;
+        border:2px solid #000; */
     }
 
 `;
@@ -272,7 +307,7 @@ export const SpanPFP = styled.span`
     display: flex;
 
     p{
-        margin: 20px 0 0 5px;
+        margin: 0 0 20px 0px;
     }
 
     @media only screen and (max-width: 425px){

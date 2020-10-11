@@ -136,6 +136,37 @@ const Cadastrar = () => {
         }
     }
 
+    // Hook
+    function useWindowSize() {
+        // Inicializa o estado com width/height undefined para que o render do servidor e cliente combinem
+        const [windowSize, setWindowSize] = useState({
+            width: undefined,
+            height: undefined,
+        });
+    
+        useEffect(() => {
+        // Handler para fazer uma call no window resize
+        function handleResize() {
+            // Settar a width/height da janela pra o state
+            setWindowSize({
+                width: window.innerWidth,
+                height: window.innerHeight,
+            });
+        }
+        
+        // Adiciona um event listener
+        window.addEventListener("resize", handleResize);
+        
+        // Chama o handler logo para que o state seja atualizado com o tamanho inicial da janela
+        handleResize();
+        
+        }, []); // Array vazio nos assegura que o efeito só roda na montagem do DOM
+         
+        return windowSize;
+    }
+
+    let size = useWindowSize();
+
     useEffect(()=>{
         setPFP_SRC(pfp.base64);
         setImagem_de_Perfil(pfp_src);
@@ -149,9 +180,8 @@ const Cadastrar = () => {
         <>
             <Form onSubmit={onSubmit} style={{display:'flex', flexDirection:'column'}} action="#" encType="multipart/form-data">
                 <Label htmlFor="nome_do_arquivo_pfp">Imagem de Perfil</Label>
-                    <Image className="perfil" src={imagem_de_perfil} alt=""/>
-                    <SpanButton limpaDisabled={!limpaDisabled} onClick={ limpaDisabled ? resetImageValue : null }>Limpar Imagem</SpanButton>
-                    <SpanPFP>
+                    <span className={size.width > 768 ? 'photoSpan' : 'photoSpan active'} >
+                        <Image className="perfil" src={imagem_de_perfil} alt=""/>
                         <Input 
                             ref={inputImage}
                             disabled={disabled}
@@ -163,6 +193,9 @@ const Cadastrar = () => {
                                 setNome_PFP(e.target.value.split('C:\\fakepath\\')[1]);
                             }}
                         />
+                    </span>
+                    <SpanButton limpaDisabled={!limpaDisabled} onClick={ limpaDisabled ? resetImageValue : null }>Limpar Imagem</SpanButton>
+                    <SpanPFP>                        
                         <p>{nome_PFP === undefined ? constNome_PFP : nome_PFP}</p>
                     </SpanPFP>
                     <small>tipos: .jpg - máx.: 4 MB</small>
