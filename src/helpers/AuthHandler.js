@@ -1,5 +1,5 @@
 import Cookies from 'js-cookie';
-// import { useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 export const isLogged = () => {
     let token = Cookies.get('token');
@@ -22,8 +22,15 @@ export const doLogout = () => {
 
 export const isAdmin = () => {
 
-    // const u = useSelector(state => state.usuario);    
+    const u = useSelector(state => state.usuario);    
     let id = Cookies.get('id');
-    return id === '5f5efa2454ac913120e1d7f1' ? true : false;
+    if(u._id !== undefined){
+        return u._id === '5f5efa2454ac913120e1d7f1' ? true : false;
+    }else if(id !== undefined){
+        return id === '5f5efa2454ac913120e1d7f1' ? true : false;
+    }else{
+        return false;
+    }
+    
 
 }
