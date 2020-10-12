@@ -216,6 +216,7 @@ const Header = () => {
                 </ul>
                 <button 
                     name="botaoDoBurgerMenu"
+                    aria-label="botaoDoBurgerMenu"
                     onClick={() => setBurgerActive(!burgerActive)} 
                     className={ burgerActive ? "burger-button" : "burger-button closed"}
                 >
