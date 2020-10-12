@@ -21,7 +21,7 @@ export const doLogout = () => {
 export const isAdmin = () => {
 
     const u = useSelector(state => state.usuario);
-    console.log(u.id);
+    console.log(u);
     return u._id === '5f5efa2454ac913120e1d7f1' ? true : false;
 
 }
