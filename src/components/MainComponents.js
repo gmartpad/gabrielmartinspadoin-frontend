@@ -78,7 +78,7 @@ export const Standard = styled.div`
 
             p {
                 text-align: justify;
-                word-break: break-all;
+                /* word-break: break-all; */
             }
 
         }
