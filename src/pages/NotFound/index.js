@@ -3,7 +3,7 @@ import React from 'react';
 const NotFound = () => {
     return (
         <>
-            <h2>Página não encontrada</h2>
+            <h2 style={{textAlign: "center"}}>Página não encontrada</h2>
         </>
     )
 }

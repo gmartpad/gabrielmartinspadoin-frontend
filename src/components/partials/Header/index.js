@@ -7,6 +7,7 @@ import axios from 'axios';
 import { HeaderArea } from './styled';
 
 import sa from '../../../config/server.json';
+import pfp from '../../../config/pfp.json';
 
 const Header = () => {
 
@@ -234,7 +235,7 @@ const Header = () => {
             </div>
             {isLogged() ?
                 <a className="headPerf" href="/perfil">
-                    <img alt="imagem_de_perfil" src={imagem_de_perfil}/>
+                    <img alt="imagem_de_perfil" src={imagem_de_perfil !== undefined ? imagem_de_perfil : pfp.base64 }/>
                 </a>
                         :
                 <></>
