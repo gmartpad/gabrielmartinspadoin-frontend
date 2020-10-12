@@ -110,7 +110,7 @@ const Home = () => {
                                 <PostAnchor href={`/post/${i.slug}`} key={k}>
                                     <PostImg 
                                         src={`${sa.address}/posts/recursos/images/${i.thumbnail === undefined ? 'pfp_padrao.jpg' : i.thumbnail}`} 
-                                        alt={i.thumbnail}
+                                        alt="thumbnail"
                                     />
                                     <PostInfo>
                                         <p className="title">{i.titulo}</p>
