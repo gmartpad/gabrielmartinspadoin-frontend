@@ -62,7 +62,7 @@ export const PostInfo = styled.div`
     }
 
     @media only screen and (min-width: 1230px){
-        h3 {
+        .title {
             margin: 18.72px 0;
         }
         p {
@@ -71,7 +71,7 @@ export const PostInfo = styled.div`
     }
 
     @media only screen and (max-width: 1024px){
-        h3 {
+        .title {
             margin: 8px 0;
         }
         p {
@@ -80,7 +80,7 @@ export const PostInfo = styled.div`
     }
 
     @media only screen and (max-width: 425px){
-        h3 {
+        .title {
             font-size: 18px;
         }
         p {
