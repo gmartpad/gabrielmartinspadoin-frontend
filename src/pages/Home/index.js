@@ -52,7 +52,11 @@ const Home = () => {
                                 a.push(res.data.usuario.nome_de_usuario)
                             })
                             .catch(err => {
-                                console.log(`Erro: ${err.response.data.erro}`)
+                                if(err.response !== undefined){
+                                    console.log(`Erro: ${err.response.data.erro}`)
+                                }else{
+                                    console.log(`Houve um erro inesperado. Tente novamente mais tarde.`)
+                                }
                             });
                     }
                 }

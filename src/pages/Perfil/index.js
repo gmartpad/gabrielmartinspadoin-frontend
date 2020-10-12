@@ -146,7 +146,11 @@ const Perfil = () => {
                         setDisabled(false);
                     })  
                     .catch(err => {
-                        console.log(`Erro: ${err}`)
+                        if(err.response !== undefined){
+                            console.log(`Erro: ${err.response.data.erro}`)
+                        }else{
+                            console.log(`Houve um erro inesperado. Tente novamente mais tarde.`)
+                        }
                         setDisabled(false);
                     })
 
@@ -225,9 +229,21 @@ const Perfil = () => {
                 setImagem_de_Perfil(_imageEncode(res.data))
                 checkImgPer();
             })
-            .catch(err => console.log(`ERRO: ${err.response.data.erro}`))
+            .catch(err => {
+                if(err.response !== undefined){
+                    console.log(`Erro: ${err.response.data.erro}`)
+                }else{
+                    console.log(`Houve um erro inesperado. Tente novamente mais tarde.`)
+                }
+            })
         })
-        .catch(err => console.log(`ERRO: ${err}`))
+        .catch(err => {
+            if(err.response !== undefined){
+                console.log(`Erro: ${err.response.data.erro}`)
+            }else{
+                console.log(`Houve um erro inesperado. Tente novamente mais tarde.`)
+            }
+        })
 
     }
 
@@ -262,7 +278,13 @@ const Perfil = () => {
             }, 500)
 
         })
-        .catch(err => console.log(`ERRO: ${err.response.data.erro}`))
+        .catch(err => {
+            if(err.response !== undefined){
+                console.log(`Erro: ${err.response.data.erro}`)
+            }else{
+                console.log(`Houve um erro inesperado. Tente novamente mais tarde.`)
+            }
+        })
 
     }
 

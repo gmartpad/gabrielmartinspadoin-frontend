@@ -51,9 +51,21 @@ const Header = () => {
                 setImagem_de_Perfil(_imageEncode(res.data))
                 // console.log(`pfp_src: ${pfp_src}`)
             })
-            .catch(err => console.log(`ERRO: ${err.response.data.erro}`))
+            .catch(err => {
+                if(err.response !== undefined){
+                    console.log(`Erro: ${err.response.data.erro}`)
+                }else{
+                    console.log(`Houve um erro inesperado. Tente novamente mais tarde.`)
+                }
+            })
         })
-        .catch(err => console.log(`ERRO: ${err}`))
+        .catch(err => {
+            if(err.response !== undefined){
+                console.log(`Erro: ${err.response.data.erro}`)
+            }else{
+                console.log(`Houve um erro inesperado. Tente novamente mais tarde.`)
+            }
+        })
 
     }
 

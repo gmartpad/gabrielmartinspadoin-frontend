@@ -48,7 +48,13 @@ const Post = () => {
     const getAutorRealName = async (id) => {
         await axios.get(`${sa.address}/usuarios/idSearch/${id}`)
             .then(res => setAutor(res.data.usuario.nome_de_usuario))
-            .catch(err => console.log(`Erro: ${err.response.data.erro}`));
+            .catch(err => {
+                if(err.response !== undefined){
+                    console.log(`Erro: ${err.response.data.erro}`)
+                }else{
+                    console.log(`Houve um erro inesperado. Tente novamente mais tarde.`)
+                }
+            });
     }
     
     const setAC = async (comentarios) => {
@@ -95,7 +101,13 @@ const Post = () => {
                 setAC(res.data.post.comentarios);
                 setSeuComentario('');
             })
-            .catch(err => toast.success(`Erro: ${err.response.data.erro}`))
+            .catch(err => {
+                if(err.response !== undefined){
+                    toast.error(`Erro: ${err.response.data.erro}`);
+                }else{
+                    toast.error(`Houve um erro inesperado. Tente novamente mais tarde.`)
+                }
+            })
     }
 
     const deletarComentario = async ( _id ) => {
@@ -106,7 +118,13 @@ const Post = () => {
                 setComentarios(res.data.post.comentarios);
                 setAC(res.data.post.comentarios);
             })
-            .catch(err => toast.success(`Erro: ${err.response.data.erro}`))
+            .catch(err => {
+                if(err.response !== undefined){
+                    toast.error(`Erro: ${err.response.data.erro}`);
+                }else{
+                    toast.error(`Houve um erro inesperado. Tente novamente mais tarde.`)
+                }
+            })
     }
 
     useEffect(() => {

@@ -135,7 +135,11 @@ const EditarPost = (props) => {
             window.location.href = '/';
         })  
         .catch(err => {
-            console.log(`Erro: ${err.response.data.erro}`)
+            if(err.response !== undefined){
+                console.log(`Erro: ${err.response.data.erro}`)
+            }else{
+                console.log(`Houve um erro inesperado. Tente novamente mais tarde.`)
+            }
             setDisabled(false);
         })
     }
@@ -180,9 +184,15 @@ const EditarPost = (props) => {
                 setConstNome_PFP(data.thumbnail)
                 setLoading(false);
             })
-            .catch(err => console.log(`Erro: ${err}`))
+            .catch(err => {
+                if(err.response !== undefined){
+                    console.log(`Erro: ${err.response.data.erro}`)
+                }else{
+                    console.log(`Houve um erro inesperado. Tente novamente mais tarde.`)
+                }
+            })
     }
-
+    
     const _imageEncode = (arrayBuffer) => {
         const b64 = Buffer.from(arrayBuffer).toString('base64');
         let mimetype="image/jpeg"
@@ -207,9 +217,21 @@ const EditarPost = (props) => {
                 setImagem_de_Perfil(_imageEncode(res.data))
                 checkImgPer();
             })
-            .catch(err => console.log(`ERRO: ${err.response.data.erro}`))
+            .catch(err => {
+                if(err.response !== undefined){
+                    console.log(`Erro: ${err.response.data.erro}`)
+                }else{
+                    console.log(`Houve um erro inesperado. Tente novamente mais tarde.`)
+                }
+            })
         })
-        .catch(err => console.log(`ERRO: ${err}`))
+        .catch(err => {
+            if(err.response !== undefined){
+                console.log(`Erro: ${err.response.data.erro}`)
+            }else{
+                console.log(`Houve um erro inesperado. Tente novamente mais tarde.`)
+            }
+        })
 
     }
 
