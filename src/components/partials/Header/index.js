@@ -82,7 +82,9 @@ const Header = () => {
     }
 
     useEffect(()=>{
-        getPFP_SRC();
+        if(isLogged()){
+            getPFP_SRC();
+        }
         checkCloseMenu();
     })
 
