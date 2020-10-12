@@ -68,8 +68,8 @@ const Login = () => {
                     let u = res.data.usuario;
                     let token = res.data.token;
                     setUsuario(u._id, u.nome_de_usuario, u.imagem_de_perfil, u.email, token)
+                    doLogin(token, u._id);
                     u = undefined;
-                    doLogin(token);
                     token = undefined;
                     res = null;
                     window.location.href = '/';

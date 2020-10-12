@@ -85,6 +85,7 @@ const Header = () => {
                         }
                     }
                 })
+                // eslint-disable-next-line
                 if(!a.includes('mobile') && !a.includes('burger-button') || a.includes('m-link')){
                     if(burgerActive){
                         setBurgerActive(!burgerActive);
