@@ -62,7 +62,7 @@ export const Codelike = styled.div`
 
     pre, & > div {
         background:#000;
-        color:#9cdcfe;
+        color:#fff;
         padding:20px;
         border-radius:10px;
         white-space:pre-wrap;
