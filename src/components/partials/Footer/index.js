@@ -56,16 +56,16 @@ const Footer = () => {
                 </div>
                 <div className="footerIconContainer">
                     <a className="footerIcon" href="https://twitter.com/__paddock__">
-                        <img alt="twitter" className="footerIconImg" src={`${img_src}twitter.png`}/>
+                        <img alt="twitter" className="footerIconImg" src={`${img_src}twitter.webp`}/>
                     </a>
                     <a className="footerIcon" href="https://www.linkedin.com/in/gabriel-martins-padoin-0aba40153/">
-                        <img alt="linkedin" className="footerIconImg" src={`${img_src}linkedin.png`}/>
+                        <img alt="linkedin" className="footerIconImg" src={`${img_src}linkedin.webp`}/>
                     </a>
                     <a className="footerIcon" href="https://github.com/gmartpad">
-                        <img alt="github" className="footerIconImg" src={`${img_src}github.png`}/>
+                        <img alt="github" className="footerIconImg" src={`${img_src}github.webp`}/>
                     </a>
                     <a className="footerIcon" href="https://dev.to/gmartpad">
-                        <img alt="devto" className="footerIconImg" src={`${img_src}devto.png`}/>
+                        <img alt="devto" className="footerIconImg" src={`${img_src}devto.webp`}/>
                     </a>
                 </div>   
             </div> 
