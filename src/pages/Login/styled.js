@@ -108,6 +108,13 @@ export const Input = styled.input`
         justify-content: center;
     }
 
+    @media only screen and (max-width: 425px){
+        &#nome_do_arquivo_pfp[type=file], &#thumbnail[type=file]{
+            height: calc(67.238px + 55.238vw);
+            width: calc(55.048px + 59.048vw);
+        }
+    }
+
     .post &#nome_do_arquivo_pfp[type=file], .post &#thumbnail[type=file]{
         border:none;
         display: block;
@@ -307,7 +314,7 @@ export const SpanPFP = styled.span`
     display: flex;
 
     p{
-        margin: 0 0 20px 0px;
+        margin: 20px 0 !important;
     }
 
     @media only screen and (max-width: 425px){
