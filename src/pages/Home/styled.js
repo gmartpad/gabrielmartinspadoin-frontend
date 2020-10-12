@@ -51,8 +51,10 @@ export const PostInfo = styled.div`
     flex-direction: column;
     justify-content: center;
 
-    h3 {
+    .title {
         margin: calc(-45.288px + 5.204vw) 0;
+        font-size: 18px;
+        font-weight: 700;
     }
 
     p {

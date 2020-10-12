@@ -113,7 +113,7 @@ const Home = () => {
                                         alt={i.thumbnail}
                                     />
                                     <PostInfo>
-                                        <h3>{i.titulo}</h3>
+                                        <p className="title">{i.titulo}</p>
                                         <p>por: {autores[k]}</p>
                                         <p>{i.createdAt.slice(0, 10).split('-').reverse().join('/')}</p>
                                         {/* <p>{i.slug}</p> */}
