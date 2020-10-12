@@ -215,6 +215,7 @@ const Header = () => {
                     }
                 </ul>
                 <button 
+                    name="botaoDoBurgerMenu"
                     onClick={() => setBurgerActive(!burgerActive)} 
                     className={ burgerActive ? "burger-button" : "burger-button closed"}
                 >
