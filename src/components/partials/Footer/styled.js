@@ -28,7 +28,7 @@ export const FooterArea = styled.div`
 
             &:after{
                 content: ' ';
-                width: 0%;
+                width: 100%;
                 height: 2px;
                 border-radius: 1px;
                 background-color: #ddd;
@@ -37,10 +37,6 @@ export const FooterArea = styled.div`
                 bottom: 0px;
                 transition: all .5s ease-in-out;
 
-            }
-
-            &:hover:after{
-                width: 100%;
             }
 
         }
